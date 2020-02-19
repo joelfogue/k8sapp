@@ -21,8 +21,6 @@ eksctl create cluster \
 --ssh-access \
 --ssh-public-key "$1-keypair"
 --zones "us-east-1a,us-east-1b"
-# --vpc-private-subnets=subnet-0483061165e5c6b42,subnet-0ea076023837d5b52
-# --vpc-public-subnets=subnet-0109de58319e6b483,subnet-06c9bcca27f028ca8
 
 ## Getting SG,SUBNET
 echo -e "Getting SG, SUBNET..."
