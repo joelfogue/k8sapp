@@ -1,0 +1,12 @@
+---
+- name: Install aws-iam-authenticator
+  block:
+    - name: Installing aws-iam-authenticator 
+      command: curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.8/2019-08-14/bin/linux/amd64/aws-iam-authenticator
+    - name: Changing permission of "/aws-iam-authenticator", adding "+x"
+      file: dest=./aws-iam-authenticator mode=a+x
+    - name: Move aws-iam-authenticator to PATH 
+      command: mv ./aws-iam-authenticator /usr/bin/aws-iam-authenticator
+      become: yes
+    - name: Check version
+      command: aws-iam-authenticator version

@@ -1,0 +1,13 @@
+---
+- name: Pull down nginx image and launch kubernetes cluster and FSx file system
+  hosts: ec2s
+  #remote_user: root
+  environment:
+    PATH: "{{ lookup('env','PATH') }}:/home/ubuntu/.local/bin/"
+  # remote_user: user
+  # become: yes
+  # become_method: sudo
+
+  roles:
+    # - nginx-ui-app
+    - kubernetes

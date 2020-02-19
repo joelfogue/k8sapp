@@ -1,0 +1,8 @@
+---
+# vars file for nginx-app
+docker_api_version: 1.40
+source_image_name: nginx:latest
+running_container_name: nginx
+docker_package: docker
+
+

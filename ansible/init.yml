@@ -1,0 +1,16 @@
+---
+- name: Creating ansible roles
+  hosts: all
+  remote_user: root
+  # remote_user: user
+  # become: yes
+  # become_method: sudo
+
+  roles:
+    - docker
+    - awscli
+    - docker
+    - eksctl
+    - git
+    - iamauthenticator
+    - kubectl

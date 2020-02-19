@@ -1,0 +1,3 @@
+---
+# vars file for kubernetes
+cluster_name: turkey-cluster-testing

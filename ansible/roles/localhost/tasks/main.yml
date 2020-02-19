@@ -1,0 +1,16 @@
+---
+# tasks file for cloudformation
+- name: create ec2 from custom ami to then launch a kubernetes cluster from
+  hosts: localhost
+  cloudformation:
+    stack_name: "ec2-k8s-cluster"
+    state: "present"
+    region: "us-east-1"
+    disable_rollback: true #disable rollback if stack creation fails
+    template: "../../../../cloudformation/ec2.yaml"
+    template_parameters:
+      KeyName: "Joel"
+      InstanceType: "ephemeral"
+      SSHLocation: "t2.micro"
+    tags:
+      Project: "K8s Project"

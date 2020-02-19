@@ -1,0 +1,16 @@
+---
+- name: Download Kubectl, and add it to the path
+  block:
+    - name: Downloading kubectl
+      shell: curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/linux/amd64/kubectl
+      args:
+        warn: no
+    - name: Changing perm of "/kubectl", adding "+x"
+      file: dest=./kubectl mode=a+x
+
+    - name: Move kubectl to the PATH 
+      command: mv ./kubectl /usr/local/bin/kubectl  
+      become: yes
+      
+    - name: check kubectl version
+      command: kubectl version --client

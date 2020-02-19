@@ -1,0 +1,11 @@
+---
+- name: Copy file with owner and permissions
+  copy:
+    src: ../../../../scripts/create_k8s_cluster.sh
+    dest: ~/k8s/scripts/
+
+- name: Creating the kubernetes cluster 
+  command: bash create_k8s_cluster.sh {{ cluster_name }}
+  args:
+    # uses shell: true
+    chdir: ~/k8s/scripts/

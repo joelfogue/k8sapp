@@ -1,0 +1,17 @@
+---
+- name: Install pip and awscli
+  block:      
+    - name: Install common packages i.e python-pip
+      apt:
+        name: "{{ common_packages }}"
+        state: present
+      vars:
+        common_packages:
+          - python-pip
+      become: true
+        
+    - name: Installing awscli
+      pip:
+        name: "awscli"
+        extra_args: "--upgrade --user"
+
