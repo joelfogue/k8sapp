@@ -3,7 +3,7 @@
   hosts: ec2s
   #remote_user: root
   environment:
-    PATH: "{{ lookup('env','PATH') }}:/home/ubuntu/.local/bin/"
+    PATH: "{{ lookup('env','PATH') }}:/home/ubuntu/.local/bin/" # Ansible can't find 'aws cli' without this for some reason!
   # remote_user: user
   # become: yes
   # become_method: sudo
