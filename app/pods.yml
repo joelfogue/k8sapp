@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: nginxapp
-      image: nginxapp:tag
+      image: jfogue/nginxapp:tag
       ports:
         - containerPort: 8080
