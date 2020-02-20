@@ -1,9 +1,7 @@
 pipeline {
     agent any
     environment{
-        DOCKER_TAG = getDockerTag()
-        JENKINS_URL  = "127.0.0.1:8080"
-        IMAGE_URL_WITH_TAG = "${JENKINS_URL}/nginxapp:${DOCKER_TAG}"
+        DOCKER_TAG = extractTagFromCommitSha()
     }
     stages{
         stage('Build Docker Image'){
@@ -14,15 +12,18 @@ pipeline {
         stage('Push Docker Image'){
             steps{
                 withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockerhubpass')]) {
-                    sh "docker login -u jfogue -p ${dockerhubpass}"
-                    sh "docker push ${IMAGE_URL_WITH_TAG}"
+                    sh '''
+                    docker login -u jfogue -p ${dockerhubpass}
+                    docker tag nginxapp:${DOCKER_TAG} jfogue/nginxapp:${DOCKER_TAG}
+                    docker push jfogue/nginxapp:${DOCKER_TAG}
+                    '''
                 }
             }
         }
     }
 }
 
-def getDockerTag(){
+def extractTagFromCommitSha(){
     def tag  = sh script: 'git rev-parse HEAD', returnStdout: true
     return tag
 }
