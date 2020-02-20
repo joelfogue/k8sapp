@@ -11,7 +11,7 @@ pipeline {
                 sh "docker build app/ -t ${IMAGE_URL_WITH_TAG}"
             }
         }
-        stage('Docker Push'){
+        stage('Push Docker Image'){
             steps{
                 withCredentials([string(credentialsId: 'nexus-pwd', variable: 'nexusPwd')]) {
                     sh "docker login -u admin -p ${nexusPwd} ${JENKINS_URL}"
