@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment{
         DOCKER_TAG = extractTagFromCommitSha()
+        IMAGE_URL_WITH_TAG="jfogue/nginxapp:${DOCKER_TAG}"
     }
     stages{
         stage('Build Docker Image'){
@@ -14,8 +15,8 @@ pipeline {
                 withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockerhubpass')]) {
                     sh '''
                     docker login -u jfogue -p ${dockerhubpass}
-                    docker tag nginxapp:${DOCKER_TAG} jfogue/nginxapp:${DOCKER_TAG}
-                    docker push jfogue/nginxapp:${DOCKER_TAG}
+                    docker tag nginxapp:${DOCKER_TAG} ${IMAGE_URL_WITH_TAG}
+                    docker push ${IMAGE_URL_WITH_TAG}
                     '''
                 }
             }
