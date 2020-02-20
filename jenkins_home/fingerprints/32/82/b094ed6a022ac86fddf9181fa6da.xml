@@ -1,0 +1,13 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2020-02-20 04:40:44.448 UTC</timestamp>
+  <md5sum>3282b094ed6a022ac86fddf9181fa6da</md5sum>
+  <fileName>Credential id=dockerhubpass name=The password for dockerhub</fileName>
+  <usages>
+    <entry>
+      <string>k8sapp</string>
+      <ranges>4</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

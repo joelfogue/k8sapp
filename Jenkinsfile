@@ -14,7 +14,7 @@ pipeline {
         stage('Push Docker Image'){
             steps{
                 withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockerhubpass')]) {
-                    sh "docker login -u jfogue -p ${dockerhubpass} ${JENKINS_URL}"
+                    sh "docker login -u jfogue -p ${dockerhubpass}"
                     sh "docker push ${IMAGE_URL_WITH_TAG}"
                 }
             }
