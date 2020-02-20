@@ -13,21 +13,9 @@ pipeline {
         }
         stage('Push Docker Image'){
             steps{
-                withCredentials([string(credentialsId: 'nexus-pwd', variable: 'nexusPwd')]) {
-                    sh "docker login -u admin -p ${nexusPwd} ${JENKINS_URL}"
+                withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockerhubpass')]) {
+                    sh "docker login -u jfogue -p ${dockerhubpass} ${JENKINS_URL}"
                     sh "docker push ${IMAGE_URL_WITH_TAG}"
-                }
-            }
-        }
-        stage('Docker Deploy Dev'){
-            steps{
-                sshagent(['tomcat-dev']) {
-                    withCredentials([string(credentialsId: 'nexus-pwd', variable: 'nexusPwd')]) {
-                        sh "ssh ec2-user@172.31.0.38 docker login -u admin -p ${nexusPwd} ${JENKINS_URL}"
-                    }
-					sh script: "ssh ec2-user@172.31.0.38 docker rm -f nodeapp",  returnStatus: true
-                    
-                    sh "ssh ec2-user@172.31.0.38 docker run -d -p 8080:8080 --name nodeapp ${IMAGE_URL_WITH_TAG}"
                 }
             }
         }
