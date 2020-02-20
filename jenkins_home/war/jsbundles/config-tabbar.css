@@ -48,9 +48,9 @@
  */
 .jenkins-config-widgets {
   position: relative;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-bottom: none;
-  background: #eee;
+  background: #eeeeee;
   min-height: 2.5em;
   -webkit-border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
@@ -71,7 +71,7 @@
 .jenkins-config-widgets .showTabs:hover {
   opacity: 0.8;
   background: #bbb;
-  color: #eee;
+  color: #eeeeee;
   text-shadow: none;
 }
 .jenkins-config-widgets .find-container {
@@ -85,15 +85,15 @@
   right: 5px;
   top: 5px;
   cursor: pointer;
-  color: #ccc;
-  text-shadow: #fff 0 1px 2px;
+  color: #cccccc;
+  text-shadow: #ffffff 0 1px 2px;
   font-size: 0.85em;
   padding: 3px 7px;
   display: none;
 }
 .jenkins-config-widgets .form-config.tabBarFrame {
   position: relative;
-  border-bottom: solid 1px #ccc;
+  border-bottom: solid 1px #cccccc;
 }
 .jenkins-config-widgets .form-config.tabBarFrame .config-section-activators {
   margin: 0;
@@ -117,14 +117,14 @@
 }
 .jenkins-config-widgets .form-config.tabBarFrame .tabBar .tab:hover {
   background: #bbb;
-  color: #fff;
+  color: #ffffff;
 }
 .jenkins-config-widgets .form-config.tabBarFrame .tabBar .tab.active {
   background: #f9f9f9;
   color: #000;
   font-weight: bold;
   z-index: 2;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-bottom: 1px solid #f9f9f9;
 }
 .jenkins-config-widgets .form-config.tabBarFrame.mouse-over .noTabs {
@@ -134,7 +134,7 @@
   opacity: 0.8;
 }
 #jenkins .jenkins-config {
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   padding: 10px;
   border-top: none;
   background: #f9f9f9;
@@ -164,7 +164,7 @@
 #jenkins .jenkins-config table .bottom-sticker-inner {
   padding: 20px 10px 25px 20px;
   border-top-right-radius: 10px;
-  border: 1px solid #acb;
+  border: 1px solid #aaccbb;
   background: rgba(245, 249, 239, 0.75);
 }
 #jenkins .jenkins-config table .bottom-sticker,
@@ -187,14 +187,14 @@
 }
 #jenkins .jenkins-config table .bottom-sticker .yui-button.primary button,
 #jenkins .jenkins-config table #bottom-sticker .yui-button.primary button {
-  background: #478;
-  border-color: #356;
+  background: #447788;
+  border-color: #335566;
 }
 #jenkins .jenkins-config table .bottom-sticker .yui-button.yui-button-disabled button,
 #jenkins .jenkins-config table #bottom-sticker .yui-button.yui-button-disabled button {
-  background: #eee;
-  border-color: #ccc;
-  color: #ccc;
+  background: #eeeeee;
+  border-color: #cccccc;
+  color: #cccccc;
 }
 #jenkins .jenkins-config table .bottom-sticker .yui-button,
 #jenkins .jenkins-config table #bottom-sticker .yui-button {
@@ -203,8 +203,8 @@
 #jenkins .jenkins-config table .bottom-sticker .yui-button button,
 #jenkins .jenkins-config table #bottom-sticker .yui-button button {
   padding: 5px 20px;
-  background: #cde;
-  border-color: #69c;
+  background: #ccddee;
+  border-color: #6699cc;
 }
 #jenkins .jenkins-config table .section-header {
   margin: 30px 0px 5px -10px;
@@ -228,7 +228,7 @@
 #jenkins .jenkins-config table td.setting-main input[type='radio'],
 #jenkins .jenkins-config table td.setting-main input[type='checkbox'] {
   position: relative;
-  top: 0.33em;
+  top: .33em;
 }
 #jenkins .jenkins-config table td {
   padding: 5px;
@@ -260,7 +260,7 @@
 }
 #jenkins .jenkins-config table td select:not(.select-ajax-pending) {
   border-radius: 0;
-  background: #fff;
+  background: #ffffff;
 }
 #jenkins .jenkins-config table td .help {
   background: rgba(255, 255, 255, 0.75);
@@ -305,17 +305,17 @@
   padding: 0 5px;
 }
 #jenkins .jenkins-config table .CodeMirror {
-  background: #fff;
+  background: #ffffff;
 }
 #jenkins .jenkins-config table .CodeMirror-scroll {
-  border: 1px solid #ccc !important;
+  border: 1px solid #cccccc !important;
 }
 #jenkins .jenkins-config table .repeated-container > .repeated-chunk {
   padding-top: 15px;
 }
 #jenkins .jenkins-config table .repeated-chunk.hover {
-  border-color: #69c;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), inset 0 200px 200px -200px #fff;
+  border-color: #6699cc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), inset 0 200px 200px -200px #ffffff;
   position: relative;
   z-index: 2;
 }
@@ -348,7 +348,7 @@
   -moz-border-top-right-radius: 0 !important;
   border-top-right-radius: 0 !important;
   background-color: #d24939;
-  color: #eee;
+  color: #eeeeee;
   border: 1px solid #be3a2b;
   line-height: 12px !important;
   display: inline-block;
@@ -358,7 +358,7 @@
 #jenkins .jenkins-config table .repeatable-delete button:hover {
   background-color: #a23225;
   border-color: #942e22;
-  color: #fff;
+  color: #ffffff;
 }
 #jenkins .jenkins-config table .repeatable-delete button:before {
   content: 'X';
@@ -377,9 +377,9 @@
   background-color: #ffff00;
 }
 #ygddfdiv {
-  background: #eee;
-  border: 1px solid #69c !important;
-  opacity: 0.5;
+  background: #eeeeee;
+  border: 1px solid #6699cc !important;
+  opacity: .5;
 }
 .yui-skin-sam .yuimenu {
   z-index: 9999 !important;
@@ -398,4 +398,3 @@
 .jenkins-config tr.config-table-top-row.active {
   display: table-row;
 }
-
