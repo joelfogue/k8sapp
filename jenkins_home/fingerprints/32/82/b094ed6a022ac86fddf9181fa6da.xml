@@ -6,7 +6,7 @@
   <usages>
     <entry>
       <string>k8sapp</string>
-      <ranges>4-5,7-9,13</ranges>
+      <ranges>4-5,7-9,13-14</ranges>
     </entry>
   </usages>
   <facets/>

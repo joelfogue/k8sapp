@@ -10,18 +10,19 @@ pipeline {
                 sh "docker build app/ -t ${IMAGE_URL_WITH_TAG}"
             }
         }
-        stage('Push Docker Image'){
-            steps{
-                withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockerhubpass')]) {
-                    sh '''
-                    docker login -u jfogue -p ${dockerhubpass}
-                    docker push ${IMAGE_URL_WITH_TAG}
-                    '''
-                }
-            }
-        }
+        // stage('Push Docker Image'){
+        //     steps{
+        //         withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockerhubpass')]) {
+        //             sh '''
+        //             docker login -u jfogue -p ${dockerhubpass}
+        //             docker push ${IMAGE_URL_WITH_TAG}
+        //             '''
+        //         }
+        //     }
+        // }
         stage('Deploy to kubernetes'){
             steps{
+                sh "ls -al"
                 sh "chmod +x scripts/update_tag.sh" 
                 sh "scripts/update_tag.sh ${DOCKER_TAG}"
                 sshagent(['ssh']) {
