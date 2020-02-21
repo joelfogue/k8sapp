@@ -1,0 +1,31 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.4">
+  <node class="cps.n.StepStartNode" plugin="workflow-cps@2.80">
+    <parentIds>
+      <string>9</string>
+    </parentIds>
+    <id>10</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.steps.EnvStep</descriptorId>
+  </node>
+  <actions>
+    <s.a.LogStorageAction/>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.80">
+      <arguments>
+        <entry>
+          <string>overrides</string>
+          <list>
+            <string>GIT_BRANCH=origin/master</string>
+            <string>GIT_COMMIT=8e3b20674bbf0dfe1c4dc4499734f858c34a9714</string>
+            <string>GIT_PREVIOUS_COMMIT=933c49bda192ac0afc5590894c773af279538111</string>
+            <string>GIT_PREVIOUS_SUCCESSFUL_COMMIT=7cc4a7f19fc3ef62f76c752e6b99284219cdba09</string>
+            <string>GIT_URL=https://github.com/Joel-fogue/k8sapp.git</string>
+          </list>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.39">
+      <startTime>1582251447624</startTime>
+    </wf.a.TimingAction>
+  </actions>
+</Tag>
