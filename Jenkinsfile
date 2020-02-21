@@ -22,8 +22,8 @@ pipeline {
         }
         stage('Deploy to kubernetes'){
             steps{
-                sh "chmod +x script/update_tag.sh" 
-                sh "script/update_tag.sh ${DOCKER_TAG}"
+                sh "chmod +x scripts/update_tag.sh" 
+                sh "scripts/update_tag.sh ${DOCKER_TAG}"
                 sshagent(['ssh']) {
                 sh '''
                 echo "Listing dir content"
