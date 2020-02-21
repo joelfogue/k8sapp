@@ -20,6 +20,20 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to kubernetes'){
+            steps{
+                sh "chmod +x script/update_tag.sh" 
+                sh "script/update_tag.sh ${DOCKER_TAG}"
+                sshagent(['ssh']) {
+                '''
+                echo "Listing dir content"
+                ls -al 
+                // scp -o StrictHostKeyChecking=no app/services.yml app/nginx-pod.yml ubuntu@172.31.39.14:/home/ubuntu/
+
+                '''
+            }
+            }
+        }
     }
 }
 

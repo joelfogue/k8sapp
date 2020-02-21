@@ -19,7 +19,7 @@ eksctl create cluster \
 --node-volume-size 35 \
 --max-pods-per-node 200 \
 --ssh-access \
---ssh-public-key "$1-keypair"
+--ssh-public-key "$1-keypair" \
 --zones "us-east-1a,us-east-1b"
 
 ## Getting SG,SUBNET

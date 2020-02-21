@@ -1,2 +1,2 @@
 #!/bin/bash
-sed "s/tag/$1/g" ../app/pods.yml > nginx-pod.yml
+sed "s/tag/$1/g" ~/k8sapp/app/pods.yml >~/k8sapp/app/nginx-pod.yml
