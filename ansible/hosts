@@ -1,4 +1,4 @@
 ## Ansible hosts file
 
 [ec2s]
-packer-ami-ec2 ansible_host=18.232.88.23 ansible_user=ubuntu ansible_connection=ssh
+packer-ami-ec2 ansible_host=107.23.213.74 ansible_user=ubuntu ansible_connection=ssh

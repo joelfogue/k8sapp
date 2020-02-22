@@ -1,0 +1,21 @@
++ echo Listing dir content
+Listing dir content
++ ls -al
+total 60
+drwxr-xr-x 10 jenkins jenkins 4096 Feb 21 02:32 .
+drwxr-xr-x  4 jenkins jenkins 4096 Feb 20 03:08 ..
+drwxr-xr-x  8 jenkins jenkins 4096 Feb 22 05:50 .git
+-rw-r--r--  1 jenkins jenkins   13 Feb 20 03:08 .gitignore
+-rw-r--r--  1 root    root      96 Feb 20 04:35 Dockerfile
+-rw-r--r--  1 root    root    1730 Feb 21 02:32 Jenkinsfile
+-rw-r--r--  1 root    root     259 Feb 21 01:50 README.md
+drwxr-xr-x  3 jenkins jenkins 4096 Feb 21 02:14 ansible
+drwxr-xr-x  3 jenkins jenkins 4096 Feb 21 02:10 app
+drwxr-xr-x  2 jenkins jenkins 4096 Feb 21 01:50 cloudformation
+drwxr-xr-x 14 jenkins jenkins 4096 Feb 21 02:32 jenkins_home
+drwxr-xr-x  2 root    root    4096 Feb 21 02:17 k8sapp
+-rw-r--r--  1 root    root       0 Feb 21 01:50 nginx-pod.yml
+drwxr-xr-x  2 jenkins jenkins 4096 Feb 20 03:08 packer
+drwxr-xr-x  2 jenkins jenkins 4096 Feb 22 05:50 scripts
+-rwxr-xr-x  1 root    root     208 Feb 21 01:50 start_jenkins.sh
++ scp -o StrictHostKeyChecking=no app/services.yml app/nginx-pod.yml ubuntu@18.232.88.23:/home/ubuntu/k8sapp

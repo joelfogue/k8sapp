@@ -1,11 +1,11 @@
 ---
-- name: Copy file with owner and permissions
+- name: Copy file with owner and permissions with kops
   copy:
-    src: ../../../../scripts/create_k8s_cluster.sh
+    src: ../../../../scripts/create_kops_cluster.sh
     dest: ~/k8sapp/scripts/
 
-- name: Creating the kubernetes cluster 
-  command: bash create_k8s_cluster.sh {{ cluster_name }}
+- name: Creating the kubernetes cluster with kops
+  command: bash create_kops_cluster.sh {{ cluster_name }}
   args:
     # uses shell: true
     chdir: ~/k8sapp/scripts/

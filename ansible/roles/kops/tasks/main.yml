@@ -1,0 +1,16 @@
+---
+- name: Download kops, and add it to the path
+  block:
+    - name: Downloading kops
+      shell: curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+      args:
+        warn: no
+    - name: Changing perm of "/kops", adding "+x"
+      file: dest=./kops-linux-amd64 mode=a+x
+
+    - name: Move kops-linux-amd64 to the PATH 
+      command: mv kops-linux-amd64 /usr/local/bin/kops
+      become: yes
+      
+    - name: check kops version
+      command: kops version

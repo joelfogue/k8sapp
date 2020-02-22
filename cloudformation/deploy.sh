@@ -9,7 +9,7 @@ STACK_NAME="ami-test"
 echo -n "Creating ec2 from packer ami > "
 aws cloudformation deploy \
 --stack-name $STACK_NAME \
---template-file ec2.yaml \
+--template-file template.yaml \
 --capabilities CAPABILITY_NAMED_IAM \
 --parameter-overrides AWS_ACCOUNT=$AWS_ACCOUNT \
 --profile $AWS_ACCOUNT_PROFILE \

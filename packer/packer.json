@@ -48,7 +48,8 @@
                 "../ansible/roles/git",
                 "../ansible/roles/iamauthenticator",
                 "../ansible/roles/kubectl",
-                "../ansible/roles/nginx-ui-app"
+                "../ansible/roles/nginx-ui-app",
+                "../ansible/roles/kops"
             ]
         }
     ],

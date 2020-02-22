@@ -31,13 +31,13 @@ pipeline {
                 sh '''
                 echo "Listing dir content"
                 ls -al 
-                scp -o StrictHostKeyChecking=no app/services.yml app/nginx-pod.yml ubuntu@18.232.88.23:/home/ubuntu/k8sapp
+                scp -o StrictHostKeyChecking=no app/services.yml app/nginx-pod.yml ubuntu@107.23.213.74:/home/ubuntu/k8sapp
                 '''
                 script{
                     try{
-                        sh "ssh ubuntu@18.232.88.23 kubectl apply -f k8sapp"
+                        sh "ssh ubuntu@107.23.213.74 kubectl apply -f k8sapp"
                     }catch(error){
-                        sh "ssh ubuntu@18.232.88.23 kubectl create -f k8sapp"
+                        sh "ssh ubuntu@107.23.213.74 kubectl create -f k8sapp"
                     }
                 }
                 

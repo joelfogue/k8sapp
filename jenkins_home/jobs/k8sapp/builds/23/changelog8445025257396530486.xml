@@ -1,0 +1,10 @@
+commit 786ea197fc72141b306d7a08061555b3efcf8b38
+tree 7e5e0c89ef8db2edde2be1e6072213198eaf4e5d
+parent 41550ccb94abd7d85c73672464876be385ef8754
+author Joel Fogue <joel.fogue@quickpivot.com> 2020-02-22 00:47:48 -0500
+committer Joel Fogue <joel.fogue@quickpivot.com> 2020-02-22 00:47:48 -0500
+
+    Updates to jenkinsfile
+
+
+:000000 100644 0000000000000000000000000000000000000000 292211448467a8c4b685e8a08fa53603813673d8 A	scripts/create_kops_cluster.sh

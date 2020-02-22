@@ -24,7 +24,7 @@ Parameters:
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
   AmiId:
     Type: String 
-    Default: "ami-03f24e811445ec4ed" # Provided by Packer manually  
+    Default: "ami-0007220faa125e689" # Provided by Packer manually  
   VPC: 
     Type: String 
     Default: "vpc-5e1c5626"
@@ -33,6 +33,9 @@ Parameters:
     Type: AWS::EC2::KeyPair::KeyName
     ConstraintDescription: must be the name of an existing EC2 KeyPair.
     Default: "joel-test"
+  BucketName:
+    Type: String 
+    Default: "ami-test-bucket-hz"
 
 Resources:
 
@@ -135,6 +138,30 @@ Resources:
         CidrIp:
           Ref: SSHLocation
       VpcId: !Ref VPC
+
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+
+  DNS: 
+    Type: "AWS::Route53::HostedZone"
+    Properties: 
+      HostedZoneConfig: 
+        Comment: 'Hosted zone for k8sapp.com'
+      Name: 'k8sapp.com'
+      VPCs: 
+        - 
+          VPCId: !Ref VPC
+          VPCRegion: 'us-east-1'
+
+      HostedZoneTags: 
+        - 
+          Key: 'CreatedBy'
+          Value: 'Joel Fogue'
+        - 
+          Key: 'Platform'
+          Value: 'DevOps'
 
 Outputs:
   InstanceId:

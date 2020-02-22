@@ -14,3 +14,4 @@
     - git
     - iamauthenticator
     - kubectl
+    - kops

@@ -1,5 +1,5 @@
 ---
-- name: Pull down nginx image and launch kubernetes cluster and FSx file system
+- name: Creating kubernetes cluster
   hosts: ec2s
   #remote_user: root
   environment:
@@ -9,5 +9,5 @@
   # become_method: sudo
 
   roles:
-    # - nginx-ui-app
-    - kubernetes
+    - nginx-ui-app
+    #- kubernetes
