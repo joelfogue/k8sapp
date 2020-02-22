@@ -229,6 +229,7 @@
         </entry>
       </buildsByBranchName>
       <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <scmName></scmName>
       <remoteUrls>
         <string>https://github.com/Joel-fogue/k8sapp.git</string>
       </remoteUrls>
@@ -260,11 +261,12 @@
   <queueId>42</queueId>
   <timestamp>1582350609576</timestamp>
   <startTime>1582350609585</startTime>
-  <duration>0</duration>
+  <result>FAILURE</result>
+  <duration>158373</duration>
   <charset>UTF-8</charset>
   <keepLog>false</keepLog>
   <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
-    <result>SUCCESS</result>
+    <result>FAILURE</result>
     <script>pipeline {
     agent any
     environment{
@@ -324,15 +326,15 @@ def extractTagFromCommitSha(){
     <timings class="map">
       <entry>
         <string>flowNode</string>
-        <long>348232662</long>
+        <long>439502194</long>
       </entry>
       <entry>
         <string>classLoad</string>
-        <long>7764575269</long>
+        <long>8012872970</long>
       </entry>
       <entry>
         <string>run</string>
-        <long>6408774787</long>
+        <long>6946750760</long>
       </entry>
       <entry>
         <string>parse</string>
@@ -340,17 +342,16 @@ def extractTagFromCommitSha(){
       </entry>
       <entry>
         <string>saveProgram</string>
-        <long>731708871</long>
+        <long>831241874</long>
       </entry>
     </timings>
     <sandbox>true</sandbox>
-    <iota>30</iota>
-    <head>1:30</head>
-    <start>2</start>
-    <done>false</done>
+    <iota>41</iota>
+    <head>1:41</head>
+    <done>true</done>
     <resumeBlocked>false</resumeBlocked>
   </execution>
-  <completed>false</completed>
+  <completed>true</completed>
   <checkouts class="hudson.util.PersistedList">
     <org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
       <scm class="hudson.plugins.git.GitSCM" plugin="git@4.1.1">
