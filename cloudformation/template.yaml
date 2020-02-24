@@ -24,7 +24,7 @@ Parameters:
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
   AmiId:
     Type: String 
-    Default: "ami-0007220faa125e689" # Provided by Packer manually  
+    Default: "ami-006359e1ac69e19a4" # Provided by Packer manually  
   VPC: 
     Type: String 
     Default: "vpc-5e1c5626"

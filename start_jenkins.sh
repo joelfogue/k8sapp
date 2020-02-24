@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-node_app=`docker ps -a | grep jenkins-container | awk '{print $NF}'`
-if [ $node_app=='jenkins-container' ]; then
+jenkins-container-instance=`docker ps -a | grep jenkins-container | awk '{print $NF}'`
+if [ $jenkins-container-instance=='jenkins-container' ]; then
     echo "jenkins-container is running, lets delete"
         docker rm -f jenkins-container
 fi
