@@ -31,7 +31,7 @@ pipeline {
                 sh '''
                 echo "Listing dir content"
                 ls -al 
-                ssh ubuntu@107.23.213.74 -vvv
+                ssh ubuntu@3.80.238.242 -vvv
                 scp -o StrictHostKeyChecking=no app/services.yml app/nginx-pod.yml admin@api.amiapp.in:/home/admin/k8sapp
                 '''
                 script{
